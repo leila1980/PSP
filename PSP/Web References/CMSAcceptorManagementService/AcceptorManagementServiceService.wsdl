@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://service.merchantadministration.paymentswitch.sahand.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AcceptorManagementServiceService" targetNamespace="http://service.merchantadministration.paymentswitch.sahand.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://service.merchantadministration.paymentswitch.sahand.com/" version="1.0">
+      <xs:element name="GeneralException" type="tns:GeneralException" />
+      <xs:element name="allocateTerminal2CardAcceptor" type="tns:allocateTerminal2CardAcceptor" />
+      <xs:element name="allocateTerminal2CardAcceptorResponse" type="tns:allocateTerminal2CardAcceptorResponse" />
+      <xs:element name="defineCardAcceptor" type="tns:defineCardAcceptor" />
+      <xs:element name="defineCardAcceptorAndAllocateTerminal" type="tns:defineCardAcceptorAndAllocateTerminal" />
+      <xs:element name="defineCardAcceptorAndAllocateTerminalResponse" type="tns:defineCardAcceptorAndAllocateTerminalResponse" />
+      <xs:element name="defineCardAcceptorResponse" type="tns:defineCardAcceptorResponse" />
+      <xs:element name="generateTMS" type="tns:generateTMS" />
+      <xs:element name="generateTMSResponse" type="tns:generateTMSResponse" />
+      <xs:element name="getCardAcceptorDetailByID" type="tns:getCardAcceptorDetailByID" />
+      <xs:element name="getCardAcceptorDetailByIDResponse" type="tns:getCardAcceptorDetailByIDResponse" />
+      <xs:element name="getCardAcceptorDetailByTerminalID" type="tns:getCardAcceptorDetailByTerminalID" />
+      <xs:element name="getCardAcceptorDetailByTerminalIDResponse" type="tns:getCardAcceptorDetailByTerminalIDResponse" />
+      <xs:element name="getTerminalDetailByID" type="tns:getTerminalDetailByID" />
+      <xs:element name="getTerminalDetailByIDResponse" type="tns:getTerminalDetailByIDResponse" />
+      <xs:element name="modifyCardAcceptor" type="tns:modifyCardAcceptor" />
+      <xs:element name="modifyCardAcceptorResponse" type="tns:modifyCardAcceptorResponse" />
+      <xs:element name="modifyTMS" type="tns:modifyTMS" />
+      <xs:element name="modifyTMSResponse" type="tns:modifyTMSResponse" />
+      <xs:element name="modifyTerminalSerial" type="tns:modifyTerminalSerial" />
+      <xs:element name="modifyTerminalSerialResponse" type="tns:modifyTerminalSerialResponse" />
+      <xs:element name="setTerminalToCancelledContractByTerminalID" type="tns:setTerminalToCancelledContractByTerminalID" />
+      <xs:element name="setTerminalToCancelledContractByTerminalIDResponse" type="tns:setTerminalToCancelledContractByTerminalIDResponse" />
+      <xs:complexType name="setTerminalToCancelledContractByTerminalID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TerminalID" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setTerminalToCancelledContractByTerminalIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:acceptorManagementRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="acceptorManagementRs">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:responseBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="cardAcceptor" type="tns:cardAcceptorDTO" />
+              <xs:element minOccurs="0" name="feeName" type="xs:string" />
+              <xs:element minOccurs="0" name="responseCode" type="tns:responseCode" />
+              <xs:element minOccurs="0" name="terminal" type="tns:terminalDTO" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="terminalList" nillable="true" type="tns:terminalDTO" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="responseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="baseResponseCode" type="xs:string" />
+          <xs:element minOccurs="0" name="responseText" type="xs:string" />
+          <xs:element minOccurs="0" name="statusCode" type="tns:statusCodeEnum" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cardAcceptorDTO">
+        <xs:sequence>
+          <xs:element name="businessCode" type="xs:short" />
+          <xs:element minOccurs="0" name="id" type="xs:string" />
+          <xs:element minOccurs="0" name="inst" type="tns:institutionDTO" />
+          <xs:element minOccurs="0" name="paymentMethod" type="tns:paymentMethodType" />
+          <xs:element name="reconciliationCycleLenght" type="xs:short" />
+          <xs:element minOccurs="0" name="setlAcnt" type="tns:externalAccountDTO" />
+          <xs:element minOccurs="0" name="settlementMethod" type="tns:settlementMethodType" />
+          <xs:element minOccurs="0" name="settlementTime" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="tns:activeInactive" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="institutionDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="institutionAddress" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionCellphoneNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionEmailAddress" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionID" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionIIN" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionLatinAddress" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionLatinName" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionName" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionPhone" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionType" type="tns:institutionType" />
+          <xs:element minOccurs="0" name="institutionWebAddress" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="externalAccountDTO">
+        <xs:sequence>
+          <xs:element name="externalAccountBankBranchID" type="xs:long" />
+          <xs:element name="externalAccountBankID" type="xs:short" />
+          <xs:element minOccurs="0" name="externalAccountID" type="xs:string" />
+          <xs:element minOccurs="0" name="externalAccountNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="externalAccountTitle" type="xs:string" />
+          <xs:element minOccurs="0" name="externallAccountType" type="tns:accountTypeCodeEnum" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="terminalDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="applicationReleaseDate" type="xs:string" />
+          <xs:element minOccurs="0" name="applicationVersion" type="xs:string" />
+          <xs:element minOccurs="0" name="dnsName" type="xs:string" />
+          <xs:element minOccurs="0" name="IPAddress" type="xs:string" />
+          <xs:element minOccurs="0" name="id" type="xs:string" />
+          <xs:element minOccurs="0" name="peerName" type="xs:string" />
+          <xs:element minOccurs="0" name="peerType" type="tns:peerType" />
+          <xs:element minOccurs="0" name="serialNo" type="xs:string" />
+          <xs:element name="systemAuditNumber" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeneralException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="category" type="xs:string" />
+          <xs:element minOccurs="0" name="description" type="xs:string" />
+          <xs:element name="errorCode" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="moduleCode" type="xs:string" />
+          <xs:element minOccurs="0" name="productCode" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="defineCardAcceptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcceptorManagementRq" type="tns:acceptorManagementRq" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="acceptorManagementRq">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:requestBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="cardAcceptor" type="tns:cardAcceptorDTO" />
+              <xs:element minOccurs="0" name="terminal" type="tns:terminalDTO" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="requestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="clientIpAddress" type="xs:string" />
+          <xs:element minOccurs="0" name="credential" type="tns:credential" />
+          <xs:element minOccurs="0" name="mac" type="xs:string" />
+          <xs:element minOccurs="0" name="proccessCode" type="xs:string" />
+          <xs:element minOccurs="0" name="requstDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="sessionId" type="xs:string" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="credential">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fingerPrint" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="smartCardData" type="xs:string" />
+          <xs:element minOccurs="0" name="ticket" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="tns:credentialTypeEnum" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="defineCardAcceptorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:acceptorManagementRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="defineCardAcceptorAndAllocateTerminal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcceptorManagementRq" type="tns:acceptorManagementRq" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="defineCardAcceptorAndAllocateTerminalResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:acceptorManagementRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="allocateTerminal2CardAcceptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcceptorManagementRq" type="tns:acceptorManagementRq" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="allocateTerminal2CardAcceptorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:acceptorManagementRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyCardAcceptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcceptorManagementRq" type="tns:acceptorManagementRq" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyCardAcceptorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:acceptorManagementRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyTerminalSerial">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcceptorManagementRq" type="tns:acceptorManagementRq" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyTerminalSerialResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:acceptorManagementRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCardAcceptorDetailByTerminalID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TerminalID" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCardAcceptorDetailByTerminalIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:acceptorManagementRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCardAcceptorDetailByID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcceptorManagementRq" type="tns:acceptorManagementRq" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCardAcceptorDetailByIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:acceptorManagementRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTerminalDetailByID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TerminalID" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTerminalDetailByIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:acceptorManagementRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="generateTMS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TMSRq" type="tns:tmsRq" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tmsRq">
+        <xs:sequence>
+          <xs:element name="immediate" type="xs:boolean" />
+          <xs:element minOccurs="0" name="scheduleDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="scheduleType" type="tns:tmsScheduleTypeEnum" />
+          <xs:element name="tdatype" type="xs:short" />
+          <xs:element minOccurs="0" name="telNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="telNumberType" type="tns:telephoneNumberTypeEnum" />
+          <xs:element minOccurs="0" name="terminalID" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="generateTMSResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:tmsRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tmsRs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="responseCode" type="tns:responseCode" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyTMS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TMSRq" type="tns:tmsRq" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyTMSResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:tmsRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="institutionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CardAcceptor" />
+          <xs:enumeration value="Operator" />
+          <xs:enumeration value="FinancialInstitution" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="paymentMethodType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Offline_File_Txn" />
+          <xs:enumeration value="Offline_File_Batch" />
+          <xs:enumeration value="Online_Transfer_Txn" />
+          <xs:enumeration value="Online_Transfer_Batch" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="accountTypeCodeEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Default" />
+          <xs:enumeration value="SavingsAccount" />
+          <xs:enumeration value="ChequeAccount" />
+          <xs:enumeration value="CreditFacility" />
+          <xs:enumeration value="UniversalAccount" />
+          <xs:enumeration value="InvestmentAccount" />
+          <xs:enumeration value="PAN" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="settlementMethodType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Manual" />
+          <xs:enumeration value="Automatic" />
+          <xs:enumeration value="TimedAtSpecifiedTime" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="activeInactive">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Active" />
+          <xs:enumeration value="InActive" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="responseCode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DoneSuccessfully" />
+          <xs:enumeration value="SystemMalfunction" />
+          <xs:enumeration value="ErrorDuringPersistance" />
+          <xs:enumeration value="ErrorLoadingDataFromDatabase" />
+          <xs:enumeration value="ErrorDuringGettingSequence" />
+          <xs:enumeration value="ErrorDuringUpdatingRecord" />
+          <xs:enumeration value="ErrorDuringDeletingRecord" />
+          <xs:enumeration value="Unable2Connect2Database" />
+          <xs:enumeration value="UnabletoGenerateNextSequenceID" />
+          <xs:enumeration value="CardAcceptorIdNotFound" />
+          <xs:enumeration value="CardAcceptorInstitutionNotFound" />
+          <xs:enumeration value="CardAcceptorInstitutionExternalAccountNotFound" />
+          <xs:enumeration value="CardAcceptorHaventAnyTerminal" />
+          <xs:enumeration value="CardAcceptorIdIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorReconciliationCycleLenghtIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorSettlementMethodIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorSettlementMethodInvalid" />
+          <xs:enumeration value="CardAcceptorStatusIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorStatusInvalid" />
+          <xs:enumeration value="CardAcceptorSettlementTimeIsNotSpecified" />
+          <xs:enumeration value="DuplicateCardAcceptorId" />
+          <xs:enumeration value="CardAcceptorIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorPaymentMethodIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorPaymentMethodInvalid" />
+          <xs:enumeration value="ExternalAccountNumberIsNotSpecified" />
+          <xs:enumeration value="ExternalAccountTitleIsNotSpecified" />
+          <xs:enumeration value="ExternalAccountTypeIsNotSpecified" />
+          <xs:enumeration value="ExternalAccountTypeInvalid" />
+          <xs:enumeration value="ExternalAccountIsNotSpecified" />
+          <xs:enumeration value="FeeSchemaIdIsNotSpecified" />
+          <xs:enumeration value="FeeSchemaIsNotSpecified" />
+          <xs:enumeration value="CannotReadFeeSchemaList" />
+          <xs:enumeration value="FeeSchemaNotFound" />
+          <xs:enumeration value="InstitutionAddressIsNotSpecified" />
+          <xs:enumeration value="InstitutionNameIsNotSpecified" />
+          <xs:enumeration value="InstitutionTypeIsNotSpecified" />
+          <xs:enumeration value="InstitutionTypeInvalid" />
+          <xs:enumeration value="InstitutionIsNotSpecified" />
+          <xs:enumeration value="TerminalIDNotFound" />
+          <xs:enumeration value="TerminalIsNotSpecified" />
+          <xs:enumeration value="DefineTerminalFailed" />
+          <xs:enumeration value="TerminalIdIsNotSpecified" />
+          <xs:enumeration value="TerminalSerialNoIsNotSpecified" />
+          <xs:enumeration value="DuplicateTerminalId" />
+          <xs:enumeration value="TerminalDoesNotExist" />
+          <xs:enumeration value="TerminalSerialNumberisInUse" />
+          <xs:enumeration value="PeerTypeIsNotSpecified" />
+          <xs:enumeration value="PeerNameIsNotSpecified" />
+          <xs:enumeration value="InstFeeSchemeNotFound" />
+          <xs:enumeration value="FeeSchemaNotDefine" />
+          <xs:enumeration value="TMSScheduleTypeNotSpecified" />
+          <xs:enumeration value="TelephoneNumberTypeNotSpecified" />
+          <xs:enumeration value="TelephoneNumberNotSpecified" />
+          <xs:enumeration value="TerminalAlreadyHaveTMSParameter" />
+          <xs:enumeration value="ScheduleDateTimeNotSpecified" />
+          <xs:enumeration value="TerminalDataTypeNotTMS" />
+          <xs:enumeration value="TerminalHaveNotTMSParameter" />
+          <xs:enumeration value="TerminalIDAlreadyCancelled" />
+          <xs:enumeration value="CannotAssignFeeSchema" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="peerType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Terminal" />
+          <xs:enumeration value="Switch" />
+          <xs:enumeration value="Host" />
+          <xs:enumeration value="POS" />
+          <xs:enumeration value="Site" />
+          <xs:enumeration value="ATM" />
+          <xs:enumeration value="IVR" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="statusCodeEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SUCCESS" />
+          <xs:enumeration value="WARNING" />
+          <xs:enumeration value="ERROR" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="credentialTypeEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="PASSWORD" />
+          <xs:enumeration value="FINGERPRINT" />
+          <xs:enumeration value="SMARTCARD" />
+          <xs:enumeration value="TICKET" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="tmsScheduleTypeEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NoAction" />
+          <xs:enumeration value="ScheduleProgramDownLineLoad" />
+          <xs:enumeration value="ScheduleInitialization" />
+          <xs:enumeration value="ScheduleProgramConfigurationFileUpdate" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="telephoneNumberTypeEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DonotUseTelephoneNumberInformationThatFollows" />
+          <xs:enumeration value="UseTheFollowingTemporaryTelephoneNumber" />
+          <xs:enumeration value="UsePrimaryTransactionTelephoneNumber" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xsd:schema>
+  </types>
+  <message name="AcceptorManagementService_modifyTerminalSerialResponse">
+    <part name="modifyTerminalSerialResponse" element="tns:modifyTerminalSerialResponse" />
+  </message>
+  <message name="AcceptorManagementService_generateTMS">
+    <part name="generateTMS" element="tns:generateTMS" />
+  </message>
+  <message name="AcceptorManagementService_generateTMSResponse">
+    <part name="generateTMSResponse" element="tns:generateTMSResponse" />
+  </message>
+  <message name="AcceptorManagementService_setTerminalToCancelledContractByTerminalIDResponse">
+    <part name="setTerminalToCancelledContractByTerminalIDResponse" element="tns:setTerminalToCancelledContractByTerminalIDResponse" />
+  </message>
+  <message name="GeneralException">
+    <part name="GeneralException" element="tns:GeneralException" />
+  </message>
+  <message name="AcceptorManagementService_defineCardAcceptorResponse">
+    <part name="defineCardAcceptorResponse" element="tns:defineCardAcceptorResponse" />
+  </message>
+  <message name="AcceptorManagementService_modifyTMS">
+    <part name="modifyTMS" element="tns:modifyTMS" />
+  </message>
+  <message name="AcceptorManagementService_defineCardAcceptorAndAllocateTerminalResponse">
+    <part name="defineCardAcceptorAndAllocateTerminalResponse" element="tns:defineCardAcceptorAndAllocateTerminalResponse" />
+  </message>
+  <message name="AcceptorManagementService_getCardAcceptorDetailByTerminalIDResponse">
+    <part name="getCardAcceptorDetailByTerminalIDResponse" element="tns:getCardAcceptorDetailByTerminalIDResponse" />
+  </message>
+  <message name="AcceptorManagementService_modifyCardAcceptorResponse">
+    <part name="modifyCardAcceptorResponse" element="tns:modifyCardAcceptorResponse" />
+  </message>
+  <message name="AcceptorManagementService_getCardAcceptorDetailByTerminalID">
+    <part name="getCardAcceptorDetailByTerminalID" element="tns:getCardAcceptorDetailByTerminalID" />
+  </message>
+  <message name="AcceptorManagementService_modifyCardAcceptor">
+    <part name="modifyCardAcceptor" element="tns:modifyCardAcceptor" />
+  </message>
+  <message name="AcceptorManagementService_setTerminalToCancelledContractByTerminalID">
+    <part name="setTerminalToCancelledContractByTerminalID" element="tns:setTerminalToCancelledContractByTerminalID" />
+  </message>
+  <message name="AcceptorManagementService_allocateTerminal2CardAcceptor">
+    <part name="allocateTerminal2CardAcceptor" element="tns:allocateTerminal2CardAcceptor" />
+  </message>
+  <message name="AcceptorManagementService_defineCardAcceptorAndAllocateTerminal">
+    <part name="defineCardAcceptorAndAllocateTerminal" element="tns:defineCardAcceptorAndAllocateTerminal" />
+  </message>
+  <message name="AcceptorManagementService_getCardAcceptorDetailByIDResponse">
+    <part name="getCardAcceptorDetailByIDResponse" element="tns:getCardAcceptorDetailByIDResponse" />
+  </message>
+  <message name="AcceptorManagementService_modifyTerminalSerial">
+    <part name="modifyTerminalSerial" element="tns:modifyTerminalSerial" />
+  </message>
+  <message name="AcceptorManagementService_defineCardAcceptor">
+    <part name="defineCardAcceptor" element="tns:defineCardAcceptor" />
+  </message>
+  <message name="AcceptorManagementService_getTerminalDetailByIDResponse">
+    <part name="getTerminalDetailByIDResponse" element="tns:getTerminalDetailByIDResponse" />
+  </message>
+  <message name="AcceptorManagementService_allocateTerminal2CardAcceptorResponse">
+    <part name="allocateTerminal2CardAcceptorResponse" element="tns:allocateTerminal2CardAcceptorResponse" />
+  </message>
+  <message name="AcceptorManagementService_getTerminalDetailByID">
+    <part name="getTerminalDetailByID" element="tns:getTerminalDetailByID" />
+  </message>
+  <message name="AcceptorManagementService_modifyTMSResponse">
+    <part name="modifyTMSResponse" element="tns:modifyTMSResponse" />
+  </message>
+  <message name="AcceptorManagementService_getCardAcceptorDetailByID">
+    <part name="getCardAcceptorDetailByID" element="tns:getCardAcceptorDetailByID" />
+  </message>
+  <portType name="AcceptorManagementService">
+    <operation name="allocateTerminal2CardAcceptor" parameterOrder="allocateTerminal2CardAcceptor">
+      <input message="tns:AcceptorManagementService_allocateTerminal2CardAcceptor" />
+      <output message="tns:AcceptorManagementService_allocateTerminal2CardAcceptorResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+    <operation name="defineCardAcceptor" parameterOrder="defineCardAcceptor">
+      <input message="tns:AcceptorManagementService_defineCardAcceptor" />
+      <output message="tns:AcceptorManagementService_defineCardAcceptorResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+    <operation name="defineCardAcceptorAndAllocateTerminal" parameterOrder="defineCardAcceptorAndAllocateTerminal">
+      <input message="tns:AcceptorManagementService_defineCardAcceptorAndAllocateTerminal" />
+      <output message="tns:AcceptorManagementService_defineCardAcceptorAndAllocateTerminalResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+    <operation name="generateTMS" parameterOrder="generateTMS">
+      <input message="tns:AcceptorManagementService_generateTMS" />
+      <output message="tns:AcceptorManagementService_generateTMSResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+    <operation name="getCardAcceptorDetailByID" parameterOrder="getCardAcceptorDetailByID">
+      <input message="tns:AcceptorManagementService_getCardAcceptorDetailByID" />
+      <output message="tns:AcceptorManagementService_getCardAcceptorDetailByIDResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+    <operation name="getCardAcceptorDetailByTerminalID" parameterOrder="getCardAcceptorDetailByTerminalID">
+      <input message="tns:AcceptorManagementService_getCardAcceptorDetailByTerminalID" />
+      <output message="tns:AcceptorManagementService_getCardAcceptorDetailByTerminalIDResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+    <operation name="getTerminalDetailByID" parameterOrder="getTerminalDetailByID">
+      <input message="tns:AcceptorManagementService_getTerminalDetailByID" />
+      <output message="tns:AcceptorManagementService_getTerminalDetailByIDResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+    <operation name="modifyCardAcceptor" parameterOrder="modifyCardAcceptor">
+      <input message="tns:AcceptorManagementService_modifyCardAcceptor" />
+      <output message="tns:AcceptorManagementService_modifyCardAcceptorResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+    <operation name="modifyTMS" parameterOrder="modifyTMS">
+      <input message="tns:AcceptorManagementService_modifyTMS" />
+      <output message="tns:AcceptorManagementService_modifyTMSResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+    <operation name="modifyTerminalSerial" parameterOrder="modifyTerminalSerial">
+      <input message="tns:AcceptorManagementService_modifyTerminalSerial" />
+      <output message="tns:AcceptorManagementService_modifyTerminalSerialResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+    <operation name="setTerminalToCancelledContractByTerminalID" parameterOrder="setTerminalToCancelledContractByTerminalID">
+      <input message="tns:AcceptorManagementService_setTerminalToCancelledContractByTerminalID" />
+      <output message="tns:AcceptorManagementService_setTerminalToCancelledContractByTerminalIDResponse" />
+      <fault name="GeneralException" message="tns:GeneralException" />
+    </operation>
+  </portType>
+  <binding name="AcceptorManagementServiceBinding" type="tns:AcceptorManagementService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="allocateTerminal2CardAcceptor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="defineCardAcceptor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="defineCardAcceptorAndAllocateTerminal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="generateTMS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getCardAcceptorDetailByID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getCardAcceptorDetailByTerminalID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getTerminalDetailByID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="modifyCardAcceptor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="modifyTMS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="modifyTerminalSerial">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setTerminalToCancelledContractByTerminalID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GeneralException">
+        <soap:fault use="literal" name="GeneralException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="AcceptorManagementServiceService">
+    <port name="AcceptorManagementServicePort" binding="tns:AcceptorManagementServiceBinding">
+      <soap:address location="http://192.168.30.29:80/sahand-ws-merchant-administration-service-0.1/AcceptorManagementService" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://webservice.aws.soft.eniac/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://acquirer.ess.eniacsoft.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FeeSchemaServiceService" targetNamespace="http://webservice.aws.soft.eniac/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:tns="http://acquirer.ess.eniacsoft.com/" targetNamespace="http://acquirer.ess.eniacsoft.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="feeSchemaRq">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cardAcceptor" type="tns:cardAcceptorDTO" />
+          <xs:element minOccurs="0" name="feeSchema" type="tns:feeSchema" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cardAcceptorDTO">
+        <xs:sequence>
+          <xs:element name="businessCode" type="xs:short" />
+          <xs:element minOccurs="0" name="id" type="xs:string" />
+          <xs:element minOccurs="0" name="inst" type="tns:institutionDTO" />
+          <xs:element minOccurs="0" name="paymentMethod" type="tns:paymentMethodType" />
+          <xs:element name="reconciliationCycleLenght" type="xs:short" />
+          <xs:element minOccurs="0" name="setlAcnt" type="tns:externalAccountDTO" />
+          <xs:element minOccurs="0" name="settlementMethod" type="tns:settlementMethodType" />
+          <xs:element minOccurs="0" name="settlementTime" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="tns:activeInactive" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="institutionDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="institutionAddress" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionCellphoneNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionEmailAddress" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionID" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionIIN" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionLatinAddress" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionLatinName" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionName" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionPhone" type="xs:string" />
+          <xs:element minOccurs="0" name="institutionType" type="tns:institutionType" />
+          <xs:element minOccurs="0" name="institutionWebAddress" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="externalAccountDTO">
+        <xs:sequence>
+          <xs:element name="externalAccountBankBranchID" type="xs:long" />
+          <xs:element name="externalAccountBankID" type="xs:short" />
+          <xs:element minOccurs="0" name="externalAccountID" type="xs:string" />
+          <xs:element minOccurs="0" name="externalAccountNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="externalAccountTitle" type="xs:string" />
+          <xs:element minOccurs="0" name="externallAccountType" type="tns:accountTypeCodeEnum" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="feeSchema">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="expirationDate" type="xs:dateTime" />
+          <xs:element name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="feeSchemaRs">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="feeSchemaList" nillable="true" type="tns:feeSchema" />
+          <xs:element minOccurs="0" name="responseCode" type="tns:responseCode" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="institutionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CardAcceptor" />
+          <xs:enumeration value="Operator" />
+          <xs:enumeration value="FinancialInstitution" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="paymentMethodType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Offline_File_Txn" />
+          <xs:enumeration value="Offline_File_Batch" />
+          <xs:enumeration value="Online_Transfer_Txn" />
+          <xs:enumeration value="Online_Transfer_Batch" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="accountTypeCodeEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Default" />
+          <xs:enumeration value="SavingsAccount" />
+          <xs:enumeration value="ChequeAccount" />
+          <xs:enumeration value="CreditFacility" />
+          <xs:enumeration value="UniversalAccount" />
+          <xs:enumeration value="InvestmentAccount" />
+          <xs:enumeration value="PAN" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="settlementMethodType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Manual" />
+          <xs:enumeration value="Automatic" />
+          <xs:enumeration value="TimedAtSpecifiedTime" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="activeInactive">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Active" />
+          <xs:enumeration value="InActive" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="responseCode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DoneSuccessfully" />
+          <xs:enumeration value="SystemMalfunction" />
+          <xs:enumeration value="ErrorDuringPersistance" />
+          <xs:enumeration value="ErrorLoadingDataFromDatabase" />
+          <xs:enumeration value="ErrorDuringGettingSequence" />
+          <xs:enumeration value="ErrorDuringUpdatingRecord" />
+          <xs:enumeration value="ErrorDuringDeletingRecord" />
+          <xs:enumeration value="Unable2Connect2Database" />
+          <xs:enumeration value="UnabletoGenerateNextSequenceID" />
+          <xs:enumeration value="CardAcceptorIdNotFound" />
+          <xs:enumeration value="CardAcceptorInstitutionNotFound" />
+          <xs:enumeration value="CardAcceptorInstitutionExternalAccountNotFound" />
+          <xs:enumeration value="CardAcceptorHaventAnyTerminal" />
+          <xs:enumeration value="CardAcceptorIdIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorReconciliationCycleLenghtIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorSettlementMethodIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorSettlementMethodInvalid" />
+          <xs:enumeration value="CardAcceptorStatusIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorStatusInvalid" />
+          <xs:enumeration value="CardAcceptorSettlementTimeIsNotSpecified" />
+          <xs:enumeration value="DuplicateCardAcceptorId" />
+          <xs:enumeration value="CardAcceptorIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorPaymentMethodIsNotSpecified" />
+          <xs:enumeration value="CardAcceptorPaymentMethodInvalid" />
+          <xs:enumeration value="ExternalAccountNumberIsNotSpecified" />
+          <xs:enumeration value="ExternalAccountTitleIsNotSpecified" />
+          <xs:enumeration value="ExternalAccountTypeIsNotSpecified" />
+          <xs:enumeration value="ExternalAccountTypeInvalid" />
+          <xs:enumeration value="ExternalAccountIsNotSpecified" />
+          <xs:enumeration value="FeeSchemaIdIsNotSpecified" />
+          <xs:enumeration value="FeeSchemaIsNotSpecified" />
+          <xs:enumeration value="CannotReadFeeSchemaList" />
+          <xs:enumeration value="FeeSchemaNotFound" />
+          <xs:enumeration value="InstitutionAddressIsNotSpecified" />
+          <xs:enumeration value="InstitutionNameIsNotSpecified" />
+          <xs:enumeration value="InstitutionTypeIsNotSpecified" />
+          <xs:enumeration value="InstitutionTypeInvalid" />
+          <xs:enumeration value="InstitutionIsNotSpecified" />
+          <xs:enumeration value="TerminalIDNotFound" />
+          <xs:enumeration value="TerminalIsNotSpecified" />
+          <xs:enumeration value="DefineTerminalFailed" />
+          <xs:enumeration value="TerminalIdIsNotSpecified" />
+          <xs:enumeration value="TerminalSerialNoIsNotSpecified" />
+          <xs:enumeration value="DuplicateTerminalId" />
+          <xs:enumeration value="TerminalDoesNotExist" />
+          <xs:enumeration value="TerminalSerialNumberisInUse" />
+          <xs:enumeration value="PeerTypeIsNotSpecified" />
+          <xs:enumeration value="PeerNameIsNotSpecified" />
+          <xs:enumeration value="InstFeeSchemeNotFound" />
+          <xs:enumeration value="FeeSchemaNotDefine" />
+          <xs:enumeration value="TMSScheduleTypeNotSpecified" />
+          <xs:enumeration value="TelephoneNumberTypeNotSpecified" />
+          <xs:enumeration value="TelephoneNumberNotSpecified" />
+          <xs:enumeration value="TerminalAlreadyHaveTMSParameter" />
+          <xs:enumeration value="ScheduleDateTimeNotSpecified" />
+          <xs:enumeration value="TerminalDataTypeNotTMS" />
+          <xs:enumeration value="TerminalHaveNotTMSParameter" />
+          <xs:enumeration value="TerminalIDAlreadyCancelled" />
+          <xs:enumeration value="CannotAssignFeeSchema" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://webservice.aws.soft.eniac/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://acquirer.ess.eniacsoft.com/" />
+      <xs:element name="assignFeeSchema2CardAcceptor" type="tns:assignFeeSchema2CardAcceptor" />
+      <xs:element name="assignFeeSchema2CardAcceptorResponse" type="tns:assignFeeSchema2CardAcceptorResponse" />
+      <xs:element name="getFeeSchemaList" type="tns:getFeeSchemaList" />
+      <xs:element name="getFeeSchemaListResponse" type="tns:getFeeSchemaListResponse" />
+      <xs:complexType name="assignFeeSchema2CardAcceptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="ns1:feeSchemaRq" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assignFeeSchema2CardAcceptorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="ns1:feeSchemaRs" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getFeeSchemaList">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="ns1:feeSchemaRq" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getFeeSchemaListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="ns1:feeSchemaRs" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="FeeSchemaService_assignFeeSchema2CardAcceptorResponse">
+    <part name="assignFeeSchema2CardAcceptorResponse" element="tns:assignFeeSchema2CardAcceptorResponse" />
+  </message>
+  <message name="FeeSchemaService_assignFeeSchema2CardAcceptor">
+    <part name="assignFeeSchema2CardAcceptor" element="tns:assignFeeSchema2CardAcceptor" />
+  </message>
+  <message name="FeeSchemaService_getFeeSchemaListResponse">
+    <part name="getFeeSchemaListResponse" element="tns:getFeeSchemaListResponse" />
+  </message>
+  <message name="FeeSchemaService_getFeeSchemaList">
+    <part name="getFeeSchemaList" element="tns:getFeeSchemaList" />
+  </message>
+  <portType name="FeeSchemaService">
+    <operation name="assignFeeSchema2CardAcceptor" parameterOrder="assignFeeSchema2CardAcceptor">
+      <input message="tns:FeeSchemaService_assignFeeSchema2CardAcceptor" />
+      <output message="tns:FeeSchemaService_assignFeeSchema2CardAcceptorResponse" />
+    </operation>
+    <operation name="getFeeSchemaList" parameterOrder="getFeeSchemaList">
+      <input message="tns:FeeSchemaService_getFeeSchemaList" />
+      <output message="tns:FeeSchemaService_getFeeSchemaListResponse" />
+    </operation>
+  </portType>
+  <binding name="FeeSchemaServiceBinding" type="tns:FeeSchemaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="assignFeeSchema2CardAcceptor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFeeSchemaList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="FeeSchemaServiceService">
+    <port name="FeeSchemaServicePort" binding="tns:FeeSchemaServiceBinding">
+      <soap:address location="http://192.168.40.27:8080/aws_tejarat-aws_tejarat/FeeSchemaService" />
+    </port>
+  </service>
+</definitions>

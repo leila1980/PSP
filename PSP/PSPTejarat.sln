@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PSPTejarat", "PSPTejarat.vbproj", "{46C1AA69-2E68-4B0A-AA59-B29783723301}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\Common.csproj", "{3AB7DECD-C69E-4EF5-ABB9-40622796B15E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL-CSharp", "..\PL-CSharp\PL-CSharp.csproj", "{DDB18242-478F-4205-8922-DF0662FA7250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "..\BL\BL.csproj", "{3B8AEDBF-5352-4D0C-9711-E63480AC7AA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{5298D115-2624-475E-9DF5-0A4F48E09D25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46C1AA69-2E68-4B0A-AA59-B29783723301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46C1AA69-2E68-4B0A-AA59-B29783723301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46C1AA69-2E68-4B0A-AA59-B29783723301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46C1AA69-2E68-4B0A-AA59-B29783723301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB7DECD-C69E-4EF5-ABB9-40622796B15E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB7DECD-C69E-4EF5-ABB9-40622796B15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB7DECD-C69E-4EF5-ABB9-40622796B15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB7DECD-C69E-4EF5-ABB9-40622796B15E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDB18242-478F-4205-8922-DF0662FA7250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB18242-478F-4205-8922-DF0662FA7250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB18242-478F-4205-8922-DF0662FA7250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB18242-478F-4205-8922-DF0662FA7250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B8AEDBF-5352-4D0C-9711-E63480AC7AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B8AEDBF-5352-4D0C-9711-E63480AC7AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B8AEDBF-5352-4D0C-9711-E63480AC7AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B8AEDBF-5352-4D0C-9711-E63480AC7AA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5298D115-2624-475E-9DF5-0A4F48E09D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5298D115-2624-475E-9DF5-0A4F48E09D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5298D115-2624-475E-9DF5-0A4F48E09D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5298D115-2624-475E-9DF5-0A4F48E09D25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {587D0B3E-858A-4D7B-B430-95BB893E6700}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs:8080/tfs/eniac
+		SccProjectUniqueName0 = PSPTejarat.vbproj
+		SccProjectName0 = .
+		SccAuxPath0 = http://tfs:8080/tfs/eniac
+		SccLocalPath0 = .
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

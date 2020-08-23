@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSAgentActivityGroupByDate" targetNamespace="http://tempuri.org/DSAgentActivityGroupByDate.xsd" xmlns:mstns="http://tempuri.org/DSAgentActivityGroupByDate.xsd" xmlns="http://tempuri.org/DSAgentActivityGroupByDate.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSAgentActivityGroupByDate" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSAgentActivityGroupByDate" msprop:Generator_DataSetName="DSAgentActivityGroupByDate">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtAgentActivityGroupByDate" msprop:Generator_UserTableName="dtAgentActivityGroupByDate" msprop:Generator_RowDeletedName="dtAgentActivityGroupByDateRowDeleted" msprop:Generator_RowChangedName="dtAgentActivityGroupByDateRowChanged" msprop:Generator_RowClassName="dtAgentActivityGroupByDateRow" msprop:Generator_RowChangingName="dtAgentActivityGroupByDateRowChanging" msprop:Generator_RowEvArgName="dtAgentActivityGroupByDateRowChangeEvent" msprop:Generator_RowEvHandlerName="dtAgentActivityGroupByDateRowChangeEventHandler" msprop:Generator_TableClassName="dtAgentActivityGroupByDateDataTable" msprop:Generator_TableVarName="tabledtAgentActivityGroupByDate" msprop:Generator_RowDeletingName="dtAgentActivityGroupByDateRowDeleting" msprop:Generator_TablePropName="dtAgentActivityGroupByDate">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date_vc" msprop:Generator_UserColumnName="Date_vc" msprop:Generator_ColumnVarNameInTable="columnDate_vc" msprop:Generator_ColumnPropNameInRow="Date_vc" msprop:Generator_ColumnPropNameInTable="Date_vcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="VisitorID" msprop:Generator_UserColumnName="VisitorID" msprop:Generator_ColumnVarNameInTable="columnVisitorID" msprop:Generator_ColumnPropNameInRow="VisitorID" msprop:Generator_ColumnPropNameInTable="VisitorIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FullName" msprop:Generator_UserColumnName="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ResultValue" msprop:Generator_UserColumnName="ResultValue" msprop:Generator_ColumnVarNameInTable="columnResultValue" msprop:Generator_ColumnPropNameInRow="ResultValue" msprop:Generator_ColumnPropNameInTable="ResultValueColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

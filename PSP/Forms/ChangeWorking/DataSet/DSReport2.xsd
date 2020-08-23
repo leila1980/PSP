@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSReport2" targetNamespace="http://tempuri.org/DSReport2.xsd" xmlns:mstns="http://tempuri.org/DSReport2.xsd" xmlns="http://tempuri.org/DSReport2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSReport2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSReport2" msprop:Generator_DataSetName="DSReport2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtMerchantsBill" msprop:Generator_UserTableName="dtMerchantsBill" msprop:Generator_RowDeletedName="dtMerchantsBillRowDeleted" msprop:Generator_TableClassName="dtMerchantsBillDataTable" msprop:Generator_RowChangedName="dtMerchantsBillRowChanged" msprop:Generator_RowClassName="dtMerchantsBillRow" msprop:Generator_RowChangingName="dtMerchantsBillRowChanging" msprop:Generator_RowEvArgName="dtMerchantsBillRowChangeEvent" msprop:Generator_RowEvHandlerName="dtMerchantsBillRowChangeEventHandler" msprop:Generator_TablePropName="dtMerchantsBill" msprop:Generator_TableVarName="tabledtMerchantsBill" msprop:Generator_RowDeletingName="dtMerchantsBillRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StoreName_nvc" msprop:Generator_UserColumnName="StoreName_nvc" msprop:Generator_ColumnPropNameInRow="StoreName_nvc" msprop:Generator_ColumnVarNameInTable="columnStoreName_nvc" msprop:Generator_ColumnPropNameInTable="StoreName_nvcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Outlet_vc" msprop:Generator_UserColumnName="Outlet_vc" msprop:Generator_ColumnPropNameInRow="Outlet_vc" msprop:Generator_ColumnVarNameInTable="columnOutlet_vc" msprop:Generator_ColumnPropNameInTable="Outlet_vcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Code_vc" msprop:Generator_UserColumnName="Code_vc" msprop:Generator_ColumnPropNameInRow="Code_vc" msprop:Generator_ColumnVarNameInTable="columnCode_vc" msprop:Generator_ColumnPropNameInTable="Code_vcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANSACTION_TIME_FA" msprop:Generator_UserColumnName="TRANSACTION_TIME_FA" msprop:Generator_ColumnPropNameInRow="TRANSACTION_TIME_FA" msprop:Generator_ColumnVarNameInTable="columnTRANSACTION_TIME_FA" msprop:Generator_ColumnPropNameInTable="TRANSACTION_TIME_FAColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInTable="AmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PC" msprop:Generator_UserColumnName="PC" msprop:Generator_ColumnPropNameInRow="PC" msprop:Generator_ColumnVarNameInTable="columnPC" msprop:Generator_ColumnPropNameInTable="PCColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MTI" msprop:Generator_UserColumnName="MTI" msprop:Generator_ColumnPropNameInRow="MTI" msprop:Generator_ColumnVarNameInTable="columnMTI" msprop:Generator_ColumnPropNameInTable="MTIColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ACTION_CODE" msprop:Generator_UserColumnName="ACTION_CODE" msprop:Generator_ColumnPropNameInRow="ACTION_CODE" msprop:Generator_ColumnVarNameInTable="columnACTION_CODE" msprop:Generator_ColumnPropNameInTable="ACTION_CODEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="REVERSAL_FLAG" msprop:Generator_UserColumnName="REVERSAL_FLAG" msprop:Generator_ColumnPropNameInRow="REVERSAL_FLAG" msprop:Generator_ColumnVarNameInTable="columnREVERSAL_FLAG" msprop:Generator_ColumnPropNameInTable="REVERSAL_FLAGColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="txn60" msprop:Generator_UserColumnName="txn60" msprop:Generator_ColumnPropNameInRow="txn60" msprop:Generator_ColumnVarNameInTable="columntxn60" msprop:Generator_ColumnPropNameInTable="txn60Column" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionType" msprop:Generator_UserColumnName="TransactionType" msprop:Generator_ColumnPropNameInRow="TransactionType" msprop:Generator_ColumnVarNameInTable="columnTransactionType" msprop:Generator_ColumnPropNameInTable="TransactionTypeColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
